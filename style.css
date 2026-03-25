@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #DEE2E8;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#device {
+  position: relative;
+  overflow: hidden;
+  width: 874px;
+  height: 402px;
+  background-color: #ffffff;
+  transform: scale(0.6);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+#top-bar-landscape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #F2F2F2;
+  display: flex;
+  align-items: stretch;
+  padding: 0 64px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.16);
+  transition: transform 0.25s ease;
+}
+
+.actions-left,
+.actions-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.actions-left {
+  width: 152px;
+}
+
+.actions-left img,
+.actions-right img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.address-bar-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  min-width: 0;
+}
+
+.address-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 44px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px -6px rgba(0, 0, 0, 0.08),
+              0 8px 24px -24px rgba(0, 0, 0, 0.08);
+}
+
+.bar-icon {
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.url-text {
+  flex: 1;
+  font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.31px;
+  color: rgba(0, 0, 0, 0.96);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.url-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.16);
+  flex-shrink: 0;
+}
+
+#portrait-chrome {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 402px;
+  transform-origin: top right;
+  transform: translate(114px, 402px) rotate(90deg);
+  transition: transform 0.25s ease;
+}
+
+#status-bar-portrait {
+  width: 100%;
+  height: 54px;
+  background-color: #F2F2F2;
+}
+
+#status-bar-portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#top-bar-portrait {
+  width: 100%;
+  height: 60px;
+  background-color: #F2F2F2;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.16);
+}
+
+#device.rotated #top-bar-landscape {
+  transform: translateY(-100%);
+}
+
+#device.rotated #portrait-chrome {
+  transform: translate(0px, 402px) rotate(90deg);
+}
+
+#device.rotated {
+  transform: scale(0.6) rotate(-90deg);
+}
